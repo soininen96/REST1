@@ -1,0 +1,16 @@
+auto car
+talo house
+puu tree
+kahvi coffee
+koira dog
+kissa cat
+tuoli chair
+suomi finland
+omena apple
+tietokone computer
+kettu fox
+ratas gear
+avaruus space
+ohjus missile
+olut beer
+valtatie highway

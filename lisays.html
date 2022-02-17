@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $('[name="Submit"]').click(function () {
+          $.ajax({
+            url: "http://localhost:8080/sanakirja",
+            type: "POST",
+            dataType: "json",
+            data: $("#form").serialize(),
+            success: function (result) {
+              console.log(result);
+            },
+            error: function (xhr, resp, text) {
+              console.log(xhr, resp, text);
+            },
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form id="form" name="form">
+      <th>Sanapari</th>
+      <td>
+        <input
+          name="suomeksi"
+          id="suomeksi"
+          type="text"
+          content=""
+          maxlength="35"
+          size="35"
+        />
+      </td>
+      <td>
+        <input
+          name="englanniksi"
+          id="englanniksi"
+          type="text"
+          maxlength="35"
+          size="35"
+        />
+      </td>
+
+      <td>
+        <input name="Submit" type="button" value="Tallenna" />
+      </td>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- otetaan suomenkielinen sana teksikentästä ja tehdään sillä get ja laitetaan tulos toiseen tekstikenttään.-->
+    <script>
+      $(document).ready(function () {
+        $('[name="suomiKaanna"]').click(function () {
+          $.get(
+            "http://localhost:8080/sanakirja/" +
+              document.getElementById("suomeksi").value,
+            function (data) {
+              document.getElementById("englanniksi").value = data;
+            }
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form id="form" name="form">
+      <td>
+        <input
+          name="suomeksi"
+          id="suomeksi"
+          type="text"
+          content=""
+          maxlength="35"
+          size="35"
+        />
+      </td>
+      <th>Suomeksi</th>
+      <td>
+        <input name="suomiKaanna" type="button" value="Käännä" />
+      </td>
+      <br />
+      <td>
+        <input
+          name="englanniksi"
+          id="englanniksi"
+          type="text"
+          maxlength="35"
+          size="35"
+        />
+      </td>
+      <th>Englanniksi</th>
+    </form>
+  </body>
+</html>
